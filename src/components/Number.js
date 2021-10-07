@@ -2,15 +2,23 @@ import { Component } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  padding: 10px;
-  border: 1px solid black;
-  width: 60px;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: #5a5a5a;
+  color: white;
+  flex: 1;
+  font-size: 24px;
+  margin: 4px;
+  border-radius: 30px;
 `;
 
 class Number extends Component {
   render() {
     return (
-      <Container onClick={() => this.props.onClick(this.props.value)}>
+      <Container className="number" onClick={() => this.props.onClick(this.props.value)}>
         {this.props.value}
       </Container>
     );

@@ -1,8 +1,16 @@
-.App {
-  padding: 40px;
+body {
+  background: linear-gradient(to right, #00AAFF, #00FF6C);
 }
 
-.App header {
-  font-size: 24px;
-  padding-bottom: 20px;
+.App {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  background: linear-gradient(to right, #eeff00, #9900ff);
+  width: 600px;
+  border-radius: 16px;
 }

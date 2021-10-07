@@ -2,16 +2,24 @@ import { Component } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  border: 1px solid black;
-  width: 300px;
-  height: 70px;
-  text-align: right;
-  margin-bottom: 10px;
+
+  height: 10em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  flex: 1;
+  font-size: 34px;
+  padding: 16px;
+  word-wrap: break-word;
+  word-break: break-all;
+  border:solid;
+  border-color: silver;
 `;
 
 class Screen extends Component {
   render() {
-    return <Container>{this.props.value}</Container>;
+    return <Container className="screen">{this.props.value}</Container>;
   }
 }
 
