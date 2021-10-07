@@ -3,6 +3,7 @@ import { Component } from "react";
 import Number from "./Number";
 import Operator from "./Operator";
 import Screen from "./Screen";
+import './Calculator.css';
 
 class Calculator extends Component {
   state = {
@@ -34,7 +35,7 @@ class Calculator extends Component {
         this.setState({ operator: null, first: first * second, second: null });
       }
     } else if (operator === "clear") {
-      this.setState({ first: null, second: null, operator: null });
+      this.setState({ first: 0, second: null, operator: null });
     } else {
       this.setState({ operator });
     }
@@ -44,31 +45,40 @@ class Calculator extends Component {
 
   render() {
     return (
-      <>
+      <div className="calculators">
         <Screen value={this.getScreenValue()} />
-        <div style={{ display: "flex" }}>
-          <div>
-            <Number value={0} onClick={this.handleNumberClick} />
-            <Number value={1} onClick={this.handleNumberClick} />
-            <Number value={2} onClick={this.handleNumberClick} />
-            <Number value={3} onClick={this.handleNumberClick} />
-            <Number value={4} onClick={this.handleNumberClick} />
-            <Number value={5} onClick={this.handleNumberClick} />
-            <Number value={6} onClick={this.handleNumberClick} />
-            <Number value={7} onClick={this.handleNumberClick} />
-            <Number value={8} onClick={this.handleNumberClick} />
-            <Number value={9} onClick={this.handleNumberClick} />
-          </div>
-          <div style={{ paddingLeft: 10 }}>
-            <Operator value="+" onClick={this.handleOperatorClick} />
-            <Operator value="/" onClick={this.handleOperatorClick} />
-            <Operator value="x" onClick={this.handleOperatorClick} />
-            <Operator value="-" onClick={this.handleOperatorClick} />
-            <Operator value="=" onClick={this.handleOperatorClick} />
-            <Operator value="clear" onClick={this.handleOperatorClick} />
+        <div className="button">
+          <div className="buttons">
+            <div className="numbers">
+              <div className="row">
+                <Number value={7} onClick={this.handleNumberClick} />
+                <Number value={8} onClick={this.handleNumberClick} />
+                <Number value={9} onClick={this.handleNumberClick} />
+                <Operator value="/" onClick={this.handleOperatorClick} />
+              </div>
+              <div className="row">
+                <Number value={4} onClick={this.handleNumberClick} />
+                <Number value={5} onClick={this.handleNumberClick} />
+                <Number value={6} onClick={this.handleNumberClick} />
+                <Operator value="x" onClick={this.handleOperatorClick} />
+              </div>
+              <div className="row">
+                <Number value={1} onClick={this.handleNumberClick} />
+                <Number value={2} onClick={this.handleNumberClick} />
+                <Number value={3} onClick={this.handleNumberClick} />
+                <Operator value="+" onClick={this.handleOperatorClick} />
+              </div>
+              <div className="row">
+                <Number value={0} onClick={this.handleNumberClick} />
+                <Operator value="." onClick={this.handleOperatorClick} />
+                <Operator value="=" onClick={this.handleOperatorClick} />
+                <Operator value="-" onClick={this.handleOperatorClick} />
+              </div>
+              <Operator value="clear" onClick={this.handleOperatorClick} />
+            </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

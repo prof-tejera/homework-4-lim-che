@@ -4,8 +4,9 @@ import Calculator from 'components/Calculator';
 function App() {
   return (
     <div className="App">
-      <header>Calculator</header>
-      <Calculator />
+      <div className='wrap'>
+        <Calculator />
+      </div>
     </div>
   );
 }

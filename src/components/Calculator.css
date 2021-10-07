@@ -1,0 +1,14 @@
+
+.number {
+    cursor: pointer;
+    font-size: 2em;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(red, green, blue, .75);
+}
+
+.row {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
